@@ -22,10 +22,8 @@ strategy for BB84 — instead of a random BB84 basis.
 
 | File | Description |
 |---|---|
-| `iqt_implementation.py` | Full IQT1 protocol simulation + Panels A & B |
-| `iqt_panels_ABC.py` | Extended simulation including eq. (D1) unforgeability bound (Panel C) |
+| `iqt_implementation.py` | Full IQT1 protocol simulation + Panels A , B & including eq. (D1) unforgeability bound (Panel C) | |
 | `breidbart_notes.pdf` | Self-contained lecture notes (7 pages) |
-| `breidbart_notes.tex` | LaTeX source for the notes |
 
 ---
 
@@ -115,8 +113,7 @@ N = 1000 :  P_forge = 0       (consistent with 10⁻⁶⁹)
 
 ```bash
 pip install numpy scipy matplotlib
-python iqt_implementation.py   # produces iqt_panels_AB.png
-python iqt_panels_ABC.py       # produces iqt_panels_ABC.png (includes D1 bound)
+python iqt_implementation.py   # produces iqt_panels_ABC.png
 ```
 
 ---
