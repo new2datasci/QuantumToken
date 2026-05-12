@@ -15,7 +15,7 @@ Protocol: IQT1 (Kent et al. Table I)
 Notation (aligned with TD2):
   p_BE  = P(Eve guesses Bob's bit correctly) = 1/2 + 1/(2√2)
   e_BE  = 1 - p_BE = 1/2 - 1/(2√2)  ← QBER observed in IQT
-  Q_tol = threshold from 0.5*(1-h(q)) = q ≈ 17.05%
+  Q_tol = threshold from h(q) = 1/2  ≈ 11.00%  (QKD Csiszar-Korner bound)
   gamma_err = bank's acceptance threshold (protocol parameter, chosen)
 """
 
@@ -32,7 +32,7 @@ def h(q):
 
 p_BE      = 0.5 + 0.5/np.sqrt(2)
 e_BE      = 1 - p_BE
-Q_tol     = brentq(lambda q: 0.5*(1-h(q))-q, 0.001, 0.499)
+Q_tol = brentq(lambda q: h(q) - 0.5, 0.001, 0.499)
 rng       = np.random.default_rng(42)
 N         = 2000
 n_trials  = 1000
